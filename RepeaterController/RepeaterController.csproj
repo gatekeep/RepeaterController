@@ -1,0 +1,335 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E660056D-A903-4567-8B9E-AE7B8B1F4C4A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RepeaterController</RootNamespace>
+    <AssemblyName>RepeaterController</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>RepeaterController.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.6.9.9\lib\net45\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio, Version=1.7.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.1.7.3\lib\net35\NAudio.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Speech" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutBox.Designer.cs">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Announcements\AnnouncementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Announcements\AnnouncementForm.Designer.cs">
+      <DependentUpon>AnnouncementForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Announcements\AnnouncementWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Announcements\AnnouncementWindow.Designer.cs">
+      <DependentUpon>AnnouncementWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Announcements\AutomaticAnnc.cs" />
+    <Compile Include="BitSet.cs" />
+    <Compile Include="CircularBuffer.cs" />
+    <Compile Include="DSP\CourtesyToneWaveProvider.cs" />
+    <Compile Include="DSP\AudioWaveProvider.cs" />
+    <Compile Include="DSP\AutomaticCW.cs" />
+    <Compile Include="DSP\BiQuad.cs" />
+    <Compile Include="CommandOptions.cs" />
+    <Compile Include="DSP\DPL\DPLDetector.cs" />
+    <Compile Include="DSP\DPL\DPLEncoder.cs" />
+    <Compile Include="DSP\DPL\DPLGenerator.cs" />
+    <Compile Include="DSP\DPL\DPLWaveIn.cs" />
+    <Compile Include="DSP\MDC1200\MDCGenerator.cs" />
+    <Compile Include="DSP\MDC1200\MDCWaveIn.cs" />
+    <Compile Include="DSP\MultiWaveOutProvider.cs" />
+    <Compile Include="DSP\PL\PLGenerator.cs" />
+    <Compile Include="DSP\RepeaterWaveIn.cs" />
+    <Compile Include="DSP\SampleToAudioProvider16.cs" />
+    <Compile Include="DSP\SignalGenerator.cs" />
+    <Compile Include="MultitoneWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MultitoneWindow.Designer.cs">
+      <DependentUpon>MultitoneWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MultitoneForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MultitoneForm.Designer.cs">
+      <DependentUpon>MultitoneForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DTMF\DtmfForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DTMF\DtmfForm.Designer.cs">
+      <DependentUpon>DtmfForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DTMF\DtmfWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DTMF\DtmfWindow.Designer.cs">
+      <DependentUpon>DtmfWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSP\PL\PLWaveIn.cs" />
+    <Compile Include="DSP\PL\PLDetector.cs" />
+    <Compile Include="DSP\PL\PLPureTones.cs" />
+    <Compile Include="Properties\AssemblyVersion.cs" />
+    <Compile Include="RepeaterOptionsT.cs" />
+    <Compile Include="DSP\AmplitudeEstimator.cs" />
+    <Compile Include="DSP\DTMF\DtmfClassification.cs" />
+    <Compile Include="DSP\DTMF\DtmfDetector.cs" />
+    <Compile Include="DSP\DTMF\DtmfTone.cs" />
+    <Compile Include="DSP\DTMF\DtmfToneEnd.cs" />
+    <Compile Include="DSP\DTMF\DtmfToneStart.cs" />
+    <Compile Include="DSP\ISampleSource.cs" />
+    <Compile Include="DSP\DTMF\DtmfWaveIn.cs" />
+    <Compile Include="DSP\DTMF\DtmfPureTones.cs" />
+    <Compile Include="DSP\SampleBlockProvider.cs" />
+    <Compile Include="DSP\SampleProviderExtensions.cs" />
+    <Compile Include="DSP\DTMF\StaticSampleSource.cs" />
+    <Compile Include="DSP\StreamingSampleSource.cs" />
+    <Compile Include="DSP\EnvelopeDetector.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RepeaterOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RepeaterOptions.Designer.cs">
+      <DependentUpon>RepeaterOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConfigureAudioDevice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConfigureAudioDevice.Designer.cs">
+      <DependentUpon>ConfigureAudioDevice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSP\MorseGenerator.cs" />
+    <Compile Include="RawMDCEncode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RawMDCEncode.Designer.cs">
+      <DependentUpon>RawMDCEncode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSP\SAPITTS.cs" />
+    <Compile Include="DSP\SimpleCompressor.cs" />
+    <Compile Include="AnncEveryHourSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AnncEveryHourSet.Designer.cs">
+      <DependentUpon>AnncEveryHourSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TargetID.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TargetID.Designer.cs">
+      <DependentUpon>TargetID.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MessageTargetID.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MessageTargetID.Designer.cs">
+      <DependentUpon>MessageTargetID.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainWindow.Designer.cs">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSP\MDC1200\MDCDetector.cs" />
+    <Compile Include="DSP\MDC1200\MDCEncoder.cs" />
+    <Compile Include="DSP\MDC1200\MDCPacket.cs" />
+    <Compile Include="DSP\MDC1200\Opcodes.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DSP\MDC1200\MDCCRC.cs" />
+    <Compile Include="Messages.cs" />
+    <Compile Include="Util.cs" />
+    <Compile Include="VolumeMeter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="VolumeMeter.Designer.cs">
+      <DependentUpon>VolumeMeter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VolumeSlider.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VolumeSlider.Designer.cs">
+      <DependentUpon>VolumeSlider.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Xml\IXmlLoader.cs" />
+    <Compile Include="Xml\XmlDictionarySerializable.cs" />
+    <Compile Include="Xml\XmlResource.cs" />
+    <EmbeddedResource Include="AboutBox.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Announcements\AnnouncementForm.resx">
+      <DependentUpon>AnnouncementForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Announcements\AnnouncementWindow.resx">
+      <DependentUpon>AnnouncementWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MultitoneWindow.resx">
+      <DependentUpon>MultitoneWindow.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MultitoneForm.resx">
+      <DependentUpon>MultitoneForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DTMF\DtmfForm.resx">
+      <DependentUpon>DtmfForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DTMF\DtmfWindow.resx">
+      <DependentUpon>DtmfWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RepeaterOptions.resx">
+      <DependentUpon>RepeaterOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConfigureAudioDevice.resx">
+      <DependentUpon>ConfigureAudioDevice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RawMDCEncode.resx">
+      <DependentUpon>RawMDCEncode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AnncEveryHourSet.resx">
+      <DependentUpon>AnncEveryHourSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TargetID.resx">
+      <DependentUpon>TargetID.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MessageTargetID.resx">
+      <DependentUpon>MessageTargetID.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainWindow.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VolumeSlider.resx">
+      <DependentUpon>VolumeSlider.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\Bullhorn.ico" />
+    <Content Include="Images\Bullhorn.png" />
+    <Content Include="Images\Calendar.ico" />
+    <Content Include="Images\Calendar.png" />
+    <Content Include="Images\Calendar16.png" />
+    <Content Include="Images\ClearSelection.png" />
+    <Content Include="Images\Cogs.ico" />
+    <Content Include="Images\Cogs.png" />
+    <Content Include="Images\DefaultButtonImage.png" />
+    <Content Include="Images\Edit.png" />
+    <Content Include="Images\EditCopy.png" />
+    <Content Include="Images\EditCut.png" />
+    <Content Include="Images\EditPaste.png" />
+    <Content Include="Images\EditRedo.png" />
+    <Content Include="Images\EditUndo.png" />
+    <Content Include="Images\Exchange.ico" />
+    <Content Include="Images\Exchange.png" />
+    <Content Include="Images\Exclamation.png" />
+    <Content Include="Images\Exclamation16.png" />
+    <Content Include="Images\Execute.png" />
+    <Content Include="Images\Exit.png" />
+    <Content Include="Images\Phone.ico" />
+    <Content Include="Images\Phone.png" />
+    <Content Include="Images\Play.png" />
+    <Content Include="Images\Properties.png" />
+    <Content Include="Images\Refresh.png" />
+    <Content Include="Images\Save.png" />
+    <Content Include="Images\Server.ico" />
+    <Content Include="Images\Server.png" />
+    <Content Include="Images\Speaker.ico" />
+    <Content Include="Images\Speaker.png" />
+    <Content Include="Images\Text.png" />
+    <Content Include="Images\Trash.png" />
+    <Content Include="Images\Trash16.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
